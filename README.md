@@ -19,12 +19,12 @@ people=cc.person.list()
 
 ### 1. Create role
 
-It is recommended to create a seperate role for the admin user according to the [principle of least privilegue](https://en.wikipedia.org/wiki/Principle_of_least_privilege).![2023-09-22_11-08-29](/private/var/folders/tz/y3qc952n4bv5bhq2rx7p23dr0000gn/T/2023-09-22_11-08-29.png)
+It is recommended to create a seperate role for the admin user according to the [principle of least privilegue](https://en.wikipedia.org/wiki/Principle_of_least_privilege).![2023-09-22_11-08-29](assets/2023-09-22_11-08-29.png)
 
 ### 2. Create API-User
 
 Now we can create the api user and copy the api-key:
-![2023-09-22_11-15-17-5374206](/Users/stephan/Library/Application Support/typora-user-images/2023-09-22_11-15-17-5374206.png)
+![2023-09-22_11-15-17-5374206](assets/2023-09-22_11-15-17-5374206.png)
 
 ### 3. Add details to your environment
 
@@ -73,4 +73,4 @@ there is an unofficial [swagger.json](./swagger.json) file to help with developm
 
 I used Vscode. You can install the recommended extensions when you first open the project:
 
-![2023-09-22_11-51-06](/private/var/folders/tz/y3qc952n4bv5bhq2rx7p23dr0000gn/T/2023-09-22_11-51-06.png)
+![2023-09-22_11-51-06](assets/2023-09-22_11-51-06.png)
