@@ -38,12 +38,14 @@ class CashCtrlClient:
         language = language.lower()
         if language not in VALID_LANGUAGES:
             raise ValueError(f"Invalid language '{language}'. Valid options are {', '.join(self.VALID_LANGUAGES)}.")
-        from .resource import account #,common,file,inventory,journal,meta,order,person,report,setting
+        from .resource import account
+        from .resource import person #,common,file,inventory,journal,meta,order,person,report,setting
         self.api_key = api_key
         self.organization = organization
         self.default_language = language
         self.base_url = f"https://{organization}.cashctrl.com/api/v1/"
         self.account = account.Account(self)
+        self.person = person.Person(self)
         self.limit = limit
         if self.limit:
             self.limiter = Limiter(self)
