@@ -1,6 +1,6 @@
 [project]
 name = "cashctrl"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Problemli GmbH", email="info@problem.li" },
 ]
@@ -14,8 +14,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/blemli/cashctrl_py"
-Issues = "https://github.com/blemli/cashctrl_py/issues"
+Homepage = "https://github.com/blemli/cashctrl-py"
+Issues = "https://github.com/blemli/cashctrl-py/issues"
 
 [build-system]
 requires = ["hatchling"]
