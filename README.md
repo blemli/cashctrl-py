@@ -1,7 +1,7 @@
 # cashctrl
-Unofficial python client for the [cashctrl api v1](https://app.cashctrl.com/static/help/en/api/index.html)
+<u>Unofficial</u> python client for the [cashctrl api v1](https://app.cashctrl.com/static/help/en/api/index.html)
 
-my goal was to make it easy, easier, easiest :smile::
+The goal was to make it easy, easier, easiest :smile::
 
 ```python
 import cashctrl
@@ -15,7 +15,7 @@ people=cc.person.list()
 
 
 
-## quickstart
+## Quickstart
 
 ### 1. Create role
 
@@ -47,7 +47,7 @@ people = cc.person.list()
 ic(people)
 ```
 
-## contribution
+## Contribute
 
 ### Fork
 
