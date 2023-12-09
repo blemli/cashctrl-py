@@ -1,6 +1,6 @@
 [project]
 name = "cashctrl"
-version = "0.0.5"
+version = "0.0.10"
 authors = [
   { name="Problemli GmbH", email="info@problem.li" },
 ]
@@ -12,7 +12,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-
+# Define project dependencies here
+dependencies = [
+  "dateparser >=1.2.0", #todo: doesn't work!
+  "python-dotenv >=1.0.0"
+]
 [project.urls]
 Homepage = "https://github.com/blemli/cashctrl-py"
 Issues = "https://github.com/blemli/cashctrl-py/issues"
