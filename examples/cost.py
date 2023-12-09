@@ -1,5 +1,5 @@
 from icecream import ic
-from cashctrl import CashCtrlClient
+from cashctrl import Client
 
 """
 This example shows how to use the limiting functionality.
@@ -8,6 +8,6 @@ This example shows how to use the limiting functionality.
 
 
 
-cc = CashCtrlClient()
+cc = Client()
 ic(cc.limiter.cost())
 ic(cc.limiter.cost(since="1 minute"))

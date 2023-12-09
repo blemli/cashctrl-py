@@ -1,8 +1,8 @@
-from cashctrl import CashCtrlClient
+from cashctrl import Client
 from icecream import ic
 
 # Initialize CashCtrlClient
-cc = CashCtrlClient()
+cc = Client()
 
 # list all accounts
 accounts = cc.account.list()

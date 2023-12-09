@@ -1,1 +1,1 @@
-from .client import CashCtrlClient
+from .client import Client

@@ -7,9 +7,9 @@ from .constants import VALID_LANGUAGES
 logging.debug=print #todo: remove
 logging.info=print #todo: remove
 
-class CashCtrlClient:
+class Client:
     """
-    CashCtrlClient is the main class to interact with the CashCtrl API. It sends all the requests and enables limiting, logging and so on.
+    Client is the main class to interact with the CashCtrl API. It sends all the requests and enables limiting, logging and so on.
     It also provides a convenient way to access all the resources via cc.account, cc.person, etc.
     """
     def __init__(self, api_key=None, organization=None, language=None, limit=True):

@@ -1,6 +1,6 @@
-from cashctrl import CashCtrlClient
+from cashctrl import Client
 from icecream import ic
 
-cc=CashCtrlClient()
+cc=Client()
 people=cc.person.list()
 ic(people)
