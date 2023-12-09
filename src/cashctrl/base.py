@@ -8,7 +8,7 @@ class CashCtrlResource:
             raise ValueError('id must be an integer')
         return self._client._make_request('GET', f'{self._resource}/read.json', params={'id': id})
 
-    def list(self,  filter=None, query=None, dir='ASC', sort='number', **kwargs,):
+    def list(self,  filter=None, query=None, dir='ASC', sort='number',limit=1000000, **kwargs):
         """
             Retrieves a list of a Resource.
 
@@ -22,10 +22,11 @@ class CashCtrlResource:
             :param sort: The column to sort the list by. Defaults to 'number'.
             :type sort: str, optional
             :param dir: The direction of the sort order. Defaults to 'ASC'.
+            :param limit: The maximum number of items to return. Defaults to 1 mio.
             :type dir: str, optional
             :return: A list of filtered and sorted items.
             """
-        return self._client._make_request('GET', f'{self._resource}/list.json', {"filter": filter, "query": query, "sort": sort, "dir": dir, **kwargs})
+        return self._client._make_request('GET', f'{self._resource}/list.json', {"filter": filter, "query": query, "sort": sort, "dir": dir, "limit": limit, **kwargs})
 
     def export(self, params=None):
         raise NotImplementedError
