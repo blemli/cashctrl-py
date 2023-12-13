@@ -85,3 +85,10 @@ I used Vscode. You can install the recommended extensions when you first open th
 ```
 
 Also see: [Package Tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/#)
+
+
+
+### .env
+
+Make sure you don't put a .env file in the sources folder. It is dangerous.
+

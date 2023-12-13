@@ -15,5 +15,8 @@ class Person(CashCtrlResource):
         return super().read(id)
     
     def list(self, **kwargs):
+        """
+            Returns a list of people.
+        """
         return super().list(**kwargs)
     

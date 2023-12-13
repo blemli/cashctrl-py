@@ -37,7 +37,7 @@ class CashCtrlResource:
         #return self.client._make_request('POST', f'{self.resource}/create', json=data)
 
     def update(self, data):
-        raise
+        raise NotImplementedError
         return self._client._make_request('PUT', f'{self._resource}/update', json=data)
 
     def delete(self, id):

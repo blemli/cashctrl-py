@@ -4,8 +4,6 @@ from requests.auth import HTTPBasicAuth
 from cashctrl.limiter import Limiter
 from .constants import VALID_LANGUAGES
 
-logging.debug=print #todo: remove
-logging.info=print #todo: remove
 
 class Client:
     """
@@ -53,7 +51,7 @@ class Client:
 
 
     def _make_request(self, method, endpoint, params=None):
-        print(params)
+        logging.info(params)
         url = f"{self.base_url}{endpoint}"
         params = params or {}
         params['lang'] = self.default_language
@@ -69,7 +67,7 @@ class Client:
             if not json_response.get('success', True):
                 raise Exception(f"Validation errors: {json_response.get('errors')}")
             if self.limit: self.limiter.lazy_log_request(endpoint)
-            return json_response
+            return json_response["data"]
 
         except requests.RequestException as e:
             raise Exception(f"An error occurred: {str(e)}")
