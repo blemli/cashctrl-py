@@ -1,6 +1,6 @@
 [project]
 name = "cashctrl"
-version = "0.0.11"
+version = "0.0.12"
 authors = [
   { name="Problemli GmbH", email="info@problem.li" },
 ]
@@ -15,7 +15,8 @@ classifiers = [
 # Define project dependencies here
 dependencies = [
   "dateparser>=1.2.0", 
-  "python-dotenv>=1.0.0"
+  "python-dotenv>=1.0.0",
+  "requests>=2.31.0"
 ]
 [project.urls]
 Homepage = "https://github.com/blemli/cashctrl-py"
