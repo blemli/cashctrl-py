@@ -1,3 +1,4 @@
+import xmltodict
 class CashCtrlResource:
     def __init__(self, client, resource):
         self._client = client
@@ -6,7 +7,14 @@ class CashCtrlResource:
     def read(self, id):
         if not type(id) == int:
             raise ValueError('id must be an integer')
-        return self._client._make_request('GET', f'{self._resource}/read.json', params={'id': id})
+        data=self._client._make_request('GET', f'{self._resource}/read.json', params={'id': id})
+        try:
+            xml = xmltodict.parse(data["name"])
+            localised_name=xml["values"][self._client.default_language]
+        except:
+            localised_name=data["name"]
+        data["localisedName"]=localised_name
+        return data
 
     def list(self,  filter=None, query=None, dir='ASC', sort='number',limit=1000000, **kwargs):
         """
@@ -26,6 +34,7 @@ class CashCtrlResource:
             :type dir: str, optional
             :return: A list of filtered and sorted items.
             """
+        #todo: what if there are more than 1'000'000 items?
         return self._client._make_request('GET', f'{self._resource}/list.json', {"filter": filter, "query": query, "sort": sort, "dir": dir, "limit": limit, **kwargs})
 
     def export(self, params=None):
@@ -36,9 +45,8 @@ class CashCtrlResource:
         raise NotImplementedError
         #return self.client._make_request('POST', f'{self.resource}/create', json=data)
 
-    def update(self, data):
-        raise NotImplementedError
-        return self._client._make_request('PUT', f'{self._resource}/update', json=data)
+    def update(self, id, **kwargs):
+        return self._client._make_request('POST', f'{self._resource}/update.json', params={id:id, **kwargs})
 
     def delete(self, id):
         return self._client._make_request('DELETE', f'{self._resource}/delete/{id}')
