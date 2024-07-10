@@ -46,3 +46,19 @@ class Account(CashCtrlResource):
             :rtype: list
         """
         return super().list(**kwargs)
+
+    def update(self, account, **kwargs):
+        """
+            Updates an account.
+
+            :param account: The account to update.
+            :type account: dict
+            :param kwargs: Additional parameters to pass to the API.
+            :return: The updated account.
+            :rtype: dict
+        """
+        id = account['id']
+        name = account['name']
+        categoryId = account['categoryId']
+        number = str(account['number'])
+        return self._client._make_request('POST', f'{self._resource}/update.json', params={id:id, name:name, categoryId:categoryId, number:number, **kwargs})
