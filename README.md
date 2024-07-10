@@ -15,7 +15,9 @@ people=cc.person.list()
 
 ### 1. Create role
 
-It is recommended to create a seperate role for the admin user according to the [principle of least privilegue](https://en.wikipedia.org/wiki/Principle_of_least_privilege).![add-role](https://raw.githubusercontent.com/blemli/cashctrl-py/main/assets/add-role.png)
+According to the  [principle of least privilegue](https://en.wikipedia.org/wiki/Principle_of_least_privilege it is recommended to create a seperate role for the admin user.
+
+Then you can give it the exact permission it needs:![add-role](https://raw.githubusercontent.com/blemli/cashctrl-py/main/assets/add-role.png)
 
 
 
@@ -24,7 +26,7 @@ It is recommended to create a seperate role for the admin user according to the 
 Now we can create the api user and copy the api-key:
 ![add-user](https://raw.githubusercontent.com/blemli/cashctrl-py/main/assets/add-user.png)
 
-### 3. Add details to your environment
+### 3. Add credentials to your environment
 
 Create the .env file and add your api-key, organization and language:
 
@@ -32,7 +34,7 @@ Create the .env file and add your api-key, organization and language:
 cp .env.example .env && open .env
 ```
 
-**Make sure your .env file is safe**
+**Make sure your .env file is in a  safe place**
 
 ### 4. have fun
 
@@ -45,33 +47,32 @@ people = cc.person.list()
 ic(people)
 ```
 
-
-
 ## Contribute
 
 ### Submit a Pull Request
 
 There is still much work to do 😔
+
 If you want to contribute, please fork the repository and create a pull request.
 `gh repo fork <USER>/cashctrl-py`
 
 ### Dynamic install
 
-For development you can install the library dynamically with the following command:
+For development you can install this library dynamically with the following command:
 
 ```bash
-pip3 install -e .
+pip3 install -e /path/to/cashctrl-py
 ```
 
-Now you can install it normally in other projects but the changes get reflected immediately.
+Now you can import it normally in other projects and changes in cashctrl-py get reflected immediately in all importing projects.
 
-### Swagger
+### ~~Swagger~~
 
-There is an unofficial [swagger.json](./swagger.json) file to help with development. You can export it into your http-client i.e. [insomnia](https://insomnia.rest/).
+~~There is an unofficial [swagger.json](./swagger.json) file to help with development. You can export it into your http-client i.e. [insomnia](https://insomnia.rest/).~~ 
 
 ### IDE
 
-I used Vscode. You can install the recommended extensions when you first open the project:
+The Project was developed in Vscode. You can install the recommended extensions when you first open the project:
 
 ![install-extensions](https://raw.githubusercontent.com/blemli/cashctrl-py/main/assets/install-extensions.png)
 
@@ -90,5 +91,5 @@ Also see: [Package Tutorial](https://packaging.python.org/en/latest/tutorials/pa
 
 ### .env
 
-Make sure you don't put a .env file in the sources folder. It is dangerous.
+Make sure you don't put a .env file in the sources folder. It is dangerous because all projects that have importet cashctrl-py with `pip -e` will then use that file instead of their own...
 
