@@ -155,3 +155,5 @@ cython_debug/
 output/*
 
 .DS_STORE
+
+.idea/
