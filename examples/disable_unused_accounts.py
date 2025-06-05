@@ -1,13 +1,12 @@
 import cashctrl
 from icecream import ic
+import time
 
 cc = cashctrl.Client()
 accounts = cc.account.list()
 print(f"Found {len(accounts)} accounts")
 count = 0
 for account in accounts:
-    if count>0: # todo: remove
-        break
     ic(cc.account.read(account['id']))
     if account['endAmount'] == 0:
         try:
@@ -16,4 +15,5 @@ for account in accounts:
             count += 1
         except Exception as e:
             print(f"Error disabling account {account['id']}: {e}")
+    time.sleep(0.05)  # To avoid hitting the API rate limit
 print(f"Disabled {count} accounts")
